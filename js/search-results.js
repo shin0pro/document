@@ -18,7 +18,7 @@ const searchData = [
     { title: "Các kiến thức thêm về CNTT", link: "khampha.html" },
     { title: "Bảng so sánh các ngôn ngữ lập trình hiện nay", link: "bảng.html" },
     { title: "Video về sự phát triển của khoa học ngày nay", link: "mp4.html" },
-    { title: "upload", link: "upload.html" },
+    { title: "upload", link: "http://shin0pro.freesite.online/upload.html" },
 ];
 
 // Lọc kết quả tìm kiếm dựa trên từ khóa
