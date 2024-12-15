@@ -6,6 +6,7 @@ const query = urlParams.get("query");  // Lấy giá trị của query từ URL
 
 // Dữ liệu giả lập cho kết quả tìm kiếm
 const searchData = [
+    { title: "Trang chủ", link: "index.html" },
     { title: "Sublime Text", link: "sublimetext.html" },
     { title: "Code Block", link: "codeblock.html" },
     { title: "Tài liệu HTML cơ bản", link: "tailieuhtmlcoban.html" },
