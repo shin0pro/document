@@ -1,40 +1,57 @@
-// search-results.js
+document.getElementById('search-button').addEventListener('click', function() {
+  const searchValue = document.getElementById('search-input').value;
+  const filterValue = document.getElementById('filter').value;
+  if (searchValue.trim() === '') { 
+    // Hiển thị thông báo nếu ô tìm kiếm trống 
+    alert('Vui lòng nhập dữ liệu để tìm kiếm.'); return; }
+  performSearch(searchValue, filterValue);
+  document.getElementById('search-input').value = ''; 
+  document.getElementById('filter').selectedIndex = 0;
+});
 
-// Lấy từ khóa tìm kiếm từ URL
-const urlParams = new URLSearchParams(window.location.search);
-const query = urlParams.get("query");  // Lấy giá trị của query từ URL
+function performSearch(query, category) {
+  const data = [
+      { name: 'Tài liệu Toán CNTT', category: 'Tài liệu', link: 'tl_toan_cntt.html' },
+      { name: 'Sublime Text', category: 'Phần mềm', link: 'sublimetext.html' },
+      { name: 'Code Block', category: 'Phần mềm', link: 'codeblock.html' },
+      { name: 'Tài liệu HTML cơ bản', category: 'Tài liệu', link: 'tailieuhtmlcoban.html' },
+      { name: 'Tài liệu C++ cơ bản', category: 'Tài liệu', link: 'tailieuc++coban.html' },
+      { name: 'Tài liệu Java Script', category: 'Tài liệu', link: 'tl_jv.html' },
+      { name: 'Tài liệu Tiếng Anh chuyên ngành CNTT', category: 'Tài liệu', link: 'tl_chuyen_nganh_cntt.html' },
+      { name: 'Tài liệu một số môn học khác', category: 'Tài liệu', link: 'khác.html' },
+      { name: 'Các kiến thức thêm về CNTT', category: 'thêm', link: 'khampha.html' },
+      { name: 'Video về sự phát triển của khoa học ngày nay', category: 'thêm', link: 'mp4.html' },
+      { name: 'Bảng so sánh các ngôn ngữ lập trình hiện nay', category: 'thêm', link: 'bảng.html' },
+      // Thêm các mục khác nếu có
+  ];
 
-// Dữ liệu giả lập cho kết quả tìm kiếm
-const searchData = [
-    { title: "Trang chủ", link: "index.html" },
-    { title: "Sublime Text", link: "sublimetext.html" },
-    { title: "Code Block", link: "codeblock.html" },
-    { title: "Tài liệu HTML cơ bản", link: "tailieuhtmlcoban.html" },
-    { title: "Tài liệu C++ cơ bản", link: "tailieuc++coban.html" },
-    { title: "Tài liệu Toán CNTT", link: "tl_toan_cntt.html" },
-    { title: "Tài liệu Java Script", link: "tl_jv.html" },
-    { title: "Tài liệu Tiếng Anh chuyên ngành CNTT", link: "tl_chuyen_nganh_cntt.html" },
-    { title: "Tài liệu một số môn khác", link: "khác.html" },
-    { title: "Các kiến thức thêm về CNTT", link: "khampha.html" },
-    { title: "Bảng so sánh các ngôn ngữ lập trình hiện nay", link: "bảng.html" },
-    { title: "Video về sự phát triển của khoa học ngày nay", link: "mp4.html" },
-    { title: "upload", link: "http://shin0pro.freesite.online/upload.html" },
-];
+  const results = data.filter(item => 
+      item.name.toLowerCase().includes(query.toLowerCase()) && 
+      item.category === category
+  );
 
-// Lọc kết quả tìm kiếm dựa trên từ khóa
-const filteredData = searchData.filter(item => 
-    item.title.toLowerCase().includes(query.toLowerCase())
-);
-
-const searchResults = document.getElementById("search-results");
-
-if (filteredData.length > 0) {
-    // Hiển thị các kết quả tìm kiếm
-    filteredData.forEach(item => {
-        const resultItem = document.createElement("div");
-        resultItem.innerHTML = `<a href="${item.link}">${item.title}</a>`;
-        searchResults.appendChild(resultItem);
-    });
-} else {
-    searchResults.innerHTML = "<p>Không tìm thấy kết quả phù hợp.</p>";
+  displayResults(results);
 }
+
+function displayResults(results) {
+  const resultsContainer = document.getElementById('search-results');
+  resultsContainer.innerHTML = '';
+
+  if (results.length === 0) {
+      resultsContainer.textContent = 'Không tìm thấy kết quả phù hợp.';
+      return;
+  }
+
+  results.forEach(result => {
+      const resultElement = document.createElement('a');
+      resultElement.textContent = result.name;
+      resultElement.href = result.link;
+      resultElement.classList.add('result-item'); // Thêm class nếu muốn trang trí bằng CSS
+      resultsContainer.appendChild(resultElement);
+  });
+}
+
+// Ẩn kết quả tìm kiếm khi không di chuột vào ô tìm kiếm 
+  const searchContainer = document.querySelector('.search-container'); 
+  searchContainer.addEventListener('mouseover', () => { document.getElementById('search-results').style.display = 'block'; }); 
+  searchContainer.addEventListener('mouseleave', () => { document.getElementById('search-results').style.display = 'none'; });
