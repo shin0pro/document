@@ -422,6 +422,7 @@ form a:hover {
 
 #search-results {
     margin-top: 20px;
+    display : none;
 }
 
 .result-item {
