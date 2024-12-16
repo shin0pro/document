@@ -49,5 +49,5 @@ if (isset($_POST['submit'])) {
 }
 ?>
 <br><br>
-<a href="http://shin0pro.freesite.online/upload.html">Quay lại</a>
+<a href="http://shin0pro.infinityfreeapp.com/upload.html">Quay lại</a>
 </head>
