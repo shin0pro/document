@@ -416,3 +416,24 @@ form a {
 form a:hover {
     text-decoration: underline;
 }
+.search-container {
+    margin-top: 20px;
+}
+
+#search-results {
+    margin-top: 20px;
+}
+
+.result-item {
+    display: block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-decoration: none; /* Xóa gạch chân cho liên kết */
+    color: #000; /* Màu chữ */
+}
+
+.result-item:hover {
+    background-color: #f0f0f0; /* Màu nền khi hover */
+}
+
