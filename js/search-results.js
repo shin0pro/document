@@ -22,6 +22,10 @@ function performSearch(query, category) {
       { name: 'Các kiến thức thêm về CNTT', category: 'thêm', link: 'khampha.html' },
       { name: 'Video về sự phát triển của khoa học ngày nay', category: 'thêm', link: 'mp4.html' },
       { name: 'Bảng so sánh các ngôn ngữ lập trình hiện nay', category: 'thêm', link: 'bảng.html' },
+      { name: 'Chính sách bảo mật', category: 'khác', link: 'chinhsachbaomat.html' },
+      { name: 'Facebook', category: 'khác', link: 'https://www.facebook.com/IT2225' },
+      { name: 'Giới thiệu', category: 'khác', link: 'index.html' },
+      
       // Thêm các mục khác nếu có
   ];
 
