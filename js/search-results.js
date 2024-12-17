@@ -25,7 +25,8 @@ function performSearch(query, category) {
       { name: 'Chính sách bảo mật', category: 'khác', link: 'chinhsachbaomat.html' },
       { name: 'Facebook', category: 'khác', link: 'https://www.facebook.com/IT2225' },
       { name: 'Giới thiệu', category: 'khác', link: 'index.html' },
-      
+      { name: 'Liên hệ', category: 'khác', link: 'lienhe.html' },
+
       // Thêm các mục khác nếu có
   ];
 
