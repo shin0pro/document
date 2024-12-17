@@ -11,6 +11,7 @@ document.getElementById('search-button').addEventListener('click', function() {
 
 function performSearch(query, category) {
   const data = [
+      { name: 'c++', category: 'Phần mềm', link: 'codeblock.html' },
       { name: 'Tài liệu Toán CNTT', category: 'Tài liệu', link: 'tl_toan_cntt.html' },
       { name: 'Sublime Text', category: 'Phần mềm', link: 'sublimetext.html' },
       { name: 'Code Block', category: 'Phần mềm', link: 'codeblock.html' },
