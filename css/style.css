@@ -3,6 +3,7 @@
         font-size: 1.2em;
         color: auto, rgba(0, 0, 0, 0.6);
         line-height: 1.6;
+                     text-align: justify;
             }
             body {
                 font-family: Arial, sans-serif;
